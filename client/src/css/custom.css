@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url("/math.jpg");
+  background-attachment: fixed;
+  background-size: 100vh 100%;
+}
