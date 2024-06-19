@@ -11,7 +11,7 @@ export async function action({ request }) {
     const updates = Object.fromEntries(formData);
 
     let res = await axios.post(
-      "http://localhost:5000/api/auth/login",
+      "https://realtimepager.onrender.com/api/auth/login",
       { ...updates },
       {
         withCredentials: true,

@@ -10,7 +10,7 @@ export function useLogout() {
     try {
       axios
         .post(
-          "http://localhost:5000/api/auth/logout",
+          "https://realtimepager.onrender.com/api/auth/logout",
           {},
           { withCredentials: true }
         )

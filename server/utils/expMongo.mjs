@@ -26,15 +26,20 @@ connectDB()
 
 const app = express();
 
-// app.use(
-//   cors({
-//     origin: "http://localhost:5173",
-//   })
-// );
+// ------------------------------------DeployMent------------------------------------------
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const static_dir = path.resolve(__dirname + "..", "..", "..", "client", "dist");
+
+app.use(express.static(static_dir));
+
+// ------------------------------------DeployMent------------------------------------------
+
 app.use(
   cors({
+    origin: "*",
+    headers: ["Content-Type"],
     credentials: true,
-    origin: "http://localhost:5173",
   })
 );
 
@@ -63,29 +68,16 @@ app.use("/api/auth", authRouter);
 app.use("/api/message", chatsRouter);
 app.use("/api/users", usersRouter);
 
-// app.listen(process.env.PORT, () => {
-//   console.log("Listening on Port ", process.env.PORT);
-// });
-
-// ------------------------------------DeployMent------------------------------------------
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const static_dir = path.resolve(__dirname + "..", "..", "..", "client", "dist");
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(static_dir));
-  app.get("*", (req, res) => {
-    const file_path = path.resolve(
-      __dirname,
-      "..",
-      "..",
-      "client",
-      "dist",
-      "index.html"
-    );
-    res.sendFile(file_path);
-  });
-}
-// ------------------------------------DeployMent------------------------------------------
+app.get("*", (req, res) => {
+  const file_path = path.resolve(
+    __dirname,
+    "..",
+    "..",
+    "client",
+    "dist",
+    "index.html"
+  );
+  res.sendFile(file_path);
+});
 
 export { app };

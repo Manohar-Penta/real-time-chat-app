@@ -23,7 +23,7 @@ export default function Bottom({ update }) {
     if (text.trim() == "" && idSelected !== "") return;
     axios
       .put(
-        `http://localhost:5000/api/message/push/${idSelected}`,
+        `https://realtimepager.onrender.com/api/message/push/${idSelected}`,
         { text },
         { withCredentials: true }
       )

@@ -14,7 +14,9 @@ export default function Conversations({ refresh }) {
 
   function fetchChats() {
     axios
-      .get("http://localhost:5000/api/message/chats", { withCredentials: true })
+      .get("https://realtimepager.onrender.com/api/message/chats", {
+        withCredentials: true,
+      })
       .then((res) => {
         if (res.data && res.data.results) setDataset(res.data.results);
       })

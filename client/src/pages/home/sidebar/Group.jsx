@@ -48,7 +48,7 @@ export default function Group({ setRefresh }) {
               }
               axios
                 .post(
-                  "http://localhost:5000/api/message/group/create",
+                  "https://realtimepager.onrender.com/api/message/group/create",
                   {
                     name: groupName,
                     users: members,

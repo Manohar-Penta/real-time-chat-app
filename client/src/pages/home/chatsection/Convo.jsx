@@ -13,7 +13,7 @@ export default function Convo({ refresh }) {
 
   function getChat() {
     axios
-      .get(`http://localhost:5000/api/message/get/${idSelected}`, {
+      .get(`https://realtimepager.onrender.com/api/message/get/${idSelected}`, {
         withCredentials: true,
       })
       .then((res) => {

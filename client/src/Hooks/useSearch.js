@@ -9,7 +9,7 @@ export function useSearch() {
     try {
       let value = search;
       return await axios.post(
-        "http://localhost:5000/api/users",
+        "https://realtimepager.onrender.com/api/users",
         { search: value.trim() },
         { withCredentials: true }
       );

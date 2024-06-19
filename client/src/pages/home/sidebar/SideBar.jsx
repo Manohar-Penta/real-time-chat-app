@@ -10,7 +10,7 @@ export default function SideBar({ refresh, setRefresh }) {
 
   function onpress(user) {
     axios
-      .get(`http://localhost:5000/api/message/${user._id}`, {
+      .get(`https://realtimepager.onrender.com/api/message/${user._id}`, {
         withCredentials: true,
       })
       .then((res) => {

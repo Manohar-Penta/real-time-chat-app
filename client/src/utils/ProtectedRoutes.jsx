@@ -4,9 +4,12 @@ import axios from "axios";
 import { useEffect } from "react";
 
 export async function loader() {
-  let res = await axios.get("http://localhost:5000/api/auth/home", {
-    withCredentials: true,
-  });
+  let res = await axios.get(
+    "https://realtimepager.onrender.com/api/auth/home",
+    {
+      withCredentials: true,
+    }
+  );
   return res.data;
 }
 

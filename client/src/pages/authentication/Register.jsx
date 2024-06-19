@@ -11,7 +11,7 @@ export async function action({ request }) {
     const updates = Object.fromEntries(formData);
     const res = await toast.promise(
       axios.post(
-        "http://localhost:5000/api/auth/signup",
+        "https://realtimepager.onrender.com/api/auth/signup",
         { ...updates },
         {
           withCredentials: true,
