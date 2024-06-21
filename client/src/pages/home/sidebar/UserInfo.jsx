@@ -15,7 +15,7 @@ export default function UserInfo({ setRefresh }) {
       <div className="flex p-2 justify-between items-center mb-2">
         <div className="flex items-center gap-4">
           {/* <RxAvatar size="2rem"  /> */}
-          <img src={pic} alt="" sizes="2rem" className="rounded-bl-full" />
+          <img src={pic} alt="" className="size-8 rounded-bl-full" />
           <h2 className="text-xl font-bold text-white">{username}</h2>
           <button
             className="bg-purple-800 rounded-lg p-[0.5rem] hover:bg-purple-900 active:p-[0.4rem] transition-all"

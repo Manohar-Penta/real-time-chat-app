@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { RxAvatar } from "react-icons/rx";
+// import { RxAvatar } from "react-icons/rx";
 import { useUserStore } from "../../../store/useUserStore";
 import { socket } from "../../../utils/socketIO.mjs";
 import { useConversation } from "../../../store/useConversation";
@@ -42,6 +42,7 @@ export default function Conversations({ refresh }) {
               <Conversation
                 key={data._id}
                 name={data.chat}
+                pic=""
                 lastMessage={
                   data.latestMessage
                     ? (data.latestMessage.sender._id == userId
@@ -89,7 +90,7 @@ function Conversation({ name, pic, lastMessage }) {
       <div className="flex border rounded items-center gap-2 p-2">
         <div className="flex-grow-0 avatar z-0">
           {/* <RxAvatar size="2.5rem" /> */}
-          {pic && <img src={pic} alt="" className="size-10 rounded-full" />}
+          {pic!=="" && <img src={pic} alt="" className="size-10 rounded-full" />}
         </div>
         <div className="flex flex-col grow-[2] overflow-hidden">
           <p className="text-white text-lg">{name}</p>
