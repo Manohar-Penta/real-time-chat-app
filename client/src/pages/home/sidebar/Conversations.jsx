@@ -65,6 +65,7 @@ export default function Conversations({ refresh }) {
             >
               <Conversation
                 key={data._id}
+                pic={data.profilePic}
                 name={otherUser.username}
                 lastMessage={
                   data.latestMessage
@@ -82,12 +83,13 @@ export default function Conversations({ refresh }) {
   );
 }
 
-function Conversation({ name, lastMessage }) {
+function Conversation({ name, pic, lastMessage }) {
   return (
     <>
       <div className="flex border rounded items-center gap-2 p-2">
         <div className="flex-grow-0 avatar z-0">
-          <RxAvatar size="2.5rem" />
+          {/* <RxAvatar size="2.5rem" /> */}
+          {pic && <img src={pic} alt="" className="size-10 rounded-full" />}
         </div>
         <div className="flex flex-col grow-[2] overflow-hidden">
           <p className="text-white text-lg">{name}</p>
