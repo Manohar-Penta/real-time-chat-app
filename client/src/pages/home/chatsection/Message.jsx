@@ -1,5 +1,6 @@
 export default function Message({ text, myMsg, time, sender }) {
   let createTime = new Date(time);
+  let dispTime = ('0'+createTime.getHours()).slice(-2)+ ":" + ('0'+createTime.getMinutes()).slice(-2);
 
   return (
     <>
@@ -11,7 +12,7 @@ export default function Message({ text, myMsg, time, sender }) {
       >
         {!myMsg && <p className="text-sm text-slate-300">{sender}</p>}
         <p className="text-xl">{text}</p>
-        <p className="text-xs text-end">{`${createTime.getHours()}:${createTime.getMinutes()}`}</p>
+        <p className="text-xs text-end">{dispTime}</p>
       </div>
     </>
   );
